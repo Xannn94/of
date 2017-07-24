@@ -1,0 +1,140 @@
+.content-header{
+    padding-top: 5px;
+}
+
+.content-header h2{
+    font-size: 26px;
+    display: inline-block;
+}
+
+.content-header > .breadcrumb > li + li::before{
+    content: "|"!important;
+}
+.content-header > .breadcrumb > li.active{
+    font-weight: bold;
+}
+
+table.table{
+    font-size: 12px;
+}
+table.table form, .timeline-body form{
+    display: inline-block!important;
+}
+
+ol.breadcrumb{
+    margin-top: 10px!important;
+}
+
+div.panel-body{
+    padding: 10px 0;
+}
+
+ul.pagination{
+    margin-left: 10px;
+}
+
+td.priority{
+    width:120px;
+    white-space: nowrap;
+}
+td.controls{
+    white-space: nowrap;
+    width:150px
+}
+
+td span.padding{
+    display: inline-block;
+    width: 25px;
+}
+
+td.folder{
+    font-weight: bold;
+}
+
+tr.unpublished td{
+    background-color: #ebd2d2;
+}
+
+table.table td.controls{
+    width:100px
+}
+
+.timeline-body{
+    position: relative;
+}
+.timeline-body .btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.images-list .timeline-body{
+    float: left;
+    margin-right: 10px;
+}
+
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.ui-tooltip-content{
+    display:none!important;
+}
+
+
+.checkbox{
+    margin: 5px 0;
+}
+.checkbox input[type="checkbox"]{
+    position: static;
+    margin: 0;
+}
+.form-control{
+    font-size: 12px;
+}
+
+.help-block{
+    font-size: 12px;
+}
+
+.box-filters{
+
+}
+
+.box-filters .col-md-3{
+    padding-left: 0;
+}
+
+.filters-button{
+    padding-left: 130px;
+}
+
+.timeline-body {
+    width: 155px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.timeline-body img {
+    max-height: 130px;
+}
+
+.modal-content {
+    border-radius: 100%;
+    background: #222d32;
+    text-align: center;
+}
