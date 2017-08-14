@@ -7,6 +7,24 @@ use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Image as Img;
 
+/**
+ * App\Modules\Gallery\Models\Gallery
+ *
+ * @property mixed $content
+ * @property-read mixed $image_full
+ * @property-read mixed $image_mini
+ * @property-read mixed $image_thumb
+ * @property mixed $preview
+ * @property mixed $title
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Modules\Gallery\Models\Image[] $images
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Gallery\Models\Gallery order()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Gallery\Models\Gallery sortable($defaultSortParameters = null)
+ * @mixin \Eloquent
+ */
 class Gallery extends Model
 {
     use Notifiable, Sortable, Img;

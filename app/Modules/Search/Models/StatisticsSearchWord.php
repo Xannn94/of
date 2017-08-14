@@ -4,6 +4,11 @@ namespace App\Modules\Search\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Modules\Search\Models\StatisticsSearchWord
+ *
+ * @mixin \Eloquent
+ */
 class StatisticsSearchWord extends Model
 {
     /**

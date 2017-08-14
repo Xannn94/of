@@ -17,7 +17,9 @@
         "unisharp/laravel-filemanager":"1.6.2",
         "intervention/image":"2.3.8",
         "baum/baum": "~1.1",
-        "mews/captcha": "~2.0"
+        "mews/captcha": "~2.0",
+        "barryvdh/laravel-ide-helper": "v2.4.1",
+        "doctrine/dbal": "2.3.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar":"2.3.0",

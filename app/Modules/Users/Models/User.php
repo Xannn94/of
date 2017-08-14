@@ -7,6 +7,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Kyslik\ColumnSortable\Sortable;
 use App\Modules\Users\Mail\UserReset;
 
+/**
+ * App\Modules\Users\Models\User
+ *
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-write mixed $password
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Users\Models\User admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Users\Models\User filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Users\Models\User list()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Users\Models\User order()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Users\Models\User sortable($defaultSortParameters = null)
+ * @mixin \Eloquent
+ */
 class User extends Authenticatable
 {
     use Notifiable, Sortable;
@@ -37,11 +49,6 @@ class User extends Authenticatable
         if ($password){
             $this->attributes['password'] = bcrypt($password);
         }
-    }
-
-    public function blogs()
-    {
-        return $this->hasMany(Blog::class);
     }
 
     public function scopeAdmin($query)

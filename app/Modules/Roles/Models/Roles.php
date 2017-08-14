@@ -7,6 +7,19 @@ use App\Modules\Admins\Models\Admins;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * App\Modules\Roles\Models\Roles
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Modules\Admin\Models\Admin[] $admins
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Modules\Roles\Models\Permission[] $permissions
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles order()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles sortable($defaultSortParameters = null)
+ * @mixin \Eloquent
+ */
 class Roles extends Model
 {
     use Notifiable, Sortable;

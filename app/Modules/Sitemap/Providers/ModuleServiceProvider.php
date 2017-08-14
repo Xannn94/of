@@ -18,8 +18,8 @@ class ModuleServiceProvider extends ModuleProvider
     {
         $this->app->register(RouteServiceProvider::class);
 
-        $this->app->bind('sitemap', function(){
+        /*$this->app->bind('sitemap', function(){
             return new Sitemap();
-        });
+        });*/
     }
 }

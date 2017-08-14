@@ -21,6 +21,7 @@ use Auth;
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Admin\Models\Admin order()
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Admin\Models\Admin sortable($defaultSortParameters = null)
  * @mixin \Eloquent
+ * @property-read \App\Modules\Roles\Models\Roles $role
  */
 class Admin extends Authenticatable
 {

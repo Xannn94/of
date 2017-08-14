@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Schema;
 
 
+/**
+ * App\Models\Model
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model order()
+ * @mixin \Eloquent
+ */
 class Model extends ParentModel
 {
 

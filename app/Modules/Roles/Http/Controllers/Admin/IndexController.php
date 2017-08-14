@@ -137,14 +137,13 @@ class IndexController extends Admin
                     $title  = $item['title'];
 
                     $module = Modules::where('slug',$slug)->first();
-
                     if(!$module){
                         $module = Modules::create([
                             'slug'  => $slug,
                             'title' => $title
                         ]);
 
-                        $admin = Roles::where('id',1)->first();
+                        $adminRole = Roles::where('id',1)->first();
 
                         $permissionEntity               = new Permission();
                         $permissionEntity->module_id    = $module->id;
@@ -154,7 +153,7 @@ class IndexController extends Admin
                         $permissionEntity->update       = 1;
                         $permissionEntity->delete       = 1;
 
-                        $admin->permissions()->save($permissionEntity);
+                        $adminRole->permissions()->save($permissionEntity);
 
                         $newModules++;
                     }
@@ -212,9 +211,9 @@ class IndexController extends Admin
                         if($permissions){
                             foreach ($permissions as $permission){
                                 if($module && $module->slug === $item->slug && $module->id == $permission->module_id){
-                                    $permission->delete();
-                                    $module->destroy();
+                                    $module->delete();
                                     $role->permissions()->detach($permission->id);
+                                    $permission->delete();
                                 }
                             }
                         }

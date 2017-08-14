@@ -22,9 +22,9 @@ class CreatePermissionsTable extends Migration
             $table->tinyInteger('delete');
             $table->tinyInteger('publish');
 
-            $table->foreign('module_id')
+            /*$table->foreign('module_id')
                 ->references('id')
-                ->on('permissions');
+                ->on('permissions');*/
 
 
         });
@@ -38,12 +38,12 @@ class CreatePermissionsTable extends Migration
     public function down()
     {
 
-        if ( Schema::hasTable('permissions') ){
+        /*if ( Schema::hasTable('permissions') ){
             Schema::table('permissions', function (Blueprint $table) {
                 $table->dropForeign('permissions_module_id_foreign');
                 $table->dropColumn('module_id');
             });
-        }
+        }*/
 
         Schema::dropIfExists('permissions');
     }

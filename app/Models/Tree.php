@@ -5,6 +5,21 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Schema;
 
 
+/**
+ * App\Models\Tree
+ *
+ * @property-read \Baum\Extensions\Eloquent\Collection|\App\Models\Tree[] $children
+ * @property-read \App\Models\Tree $parent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tree active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tree admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tree filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Baum\Node limitDepth($limit)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tree order()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Baum\Node withoutNode($node)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Baum\Node withoutRoot()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Baum\Node withoutSelf()
+ * @mixin \Eloquent
+ */
 class Tree extends \Baum\Node{
 
     protected $table = null;

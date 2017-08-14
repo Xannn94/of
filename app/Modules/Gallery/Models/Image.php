@@ -3,6 +3,19 @@ namespace App\Modules\Gallery\Models;
 use App\Models\Model;
 use App\Models\Image as Img;
 
+/**
+ * App\Modules\Gallery\Models\Image
+ *
+ * @property-read mixed $image_full
+ * @property-read mixed $image_mini
+ * @property-read mixed $image_thumb
+ * @property-read \App\Modules\Gallery\Models\Gallery $parent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Gallery\Models\Image order()
+ * @mixin \Eloquent
+ */
 class Image extends Model
 {
     use Img;

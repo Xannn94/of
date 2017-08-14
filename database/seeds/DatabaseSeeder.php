@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
                 'role_id'   => 1,
                 'name'      => 'admin',
                 'email'     => 'admin@admin.ru',
-                'password'  =>  bcrypt('admin'),
-                'created_at'=>time()
+                'password'  => bcrypt('admin'),
+                'created_at'=> time()
             ]
         );
 

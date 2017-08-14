@@ -16,7 +16,7 @@
         <section class="sidebar">
             <ul class="sidebar-menu">
                 @foreach ($items as $group)
-                <li class="treeview @if($pageGroup === $group['slug']) active @endif">
+                <li class="treeview active">
                     <a href="">
                         <i class="fa {{$group['icon']}}"></i> <span>{{$group['title']}}</span>
                         <span class="pull-right-container">
