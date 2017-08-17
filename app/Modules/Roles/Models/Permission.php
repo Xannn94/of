@@ -17,6 +17,20 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Model order()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission sortable($defaultSortParameters = null)
  * @mixin \Eloquent
+ * @property int $id
+ * @property int $module_id
+ * @property int $create
+ * @property int $read
+ * @property int $update
+ * @property int $delete
+ * @property int $publish
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereCreate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereDelete($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereModuleId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission wherePublish($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereRead($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Permission whereUpdate($value)
  */
 class Permission extends Model
 {

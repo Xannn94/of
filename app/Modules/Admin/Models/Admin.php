@@ -22,6 +22,21 @@ use Auth;
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Admin\Models\Admin sortable($defaultSortParameters = null)
  * @mixin \Eloquent
  * @property-read \App\Modules\Roles\Models\Roles $role
+ * @property int $id
+ * @property int $role_id
+ * @property string $name
+ * @property string $email
+ * @property string|null $remember_token
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereRoleId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Admin\Models\Admin whereUpdatedAt($value)
  */
 class Admin extends Authenticatable
 {

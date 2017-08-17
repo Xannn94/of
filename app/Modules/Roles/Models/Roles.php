@@ -19,6 +19,12 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles order()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles sortable($defaultSortParameters = null)
  * @mixin \Eloquent
+ * @property int $id
+ * @property string $title
+ * @property int $active
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Roles\Models\Roles whereTitle($value)
  */
 class Roles extends Model
 {

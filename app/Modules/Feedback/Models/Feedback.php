@@ -15,6 +15,24 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback order()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback sortable($defaultSortParameters = null)
  * @mixin \Eloquent
+ * @property int $id
+ * @property string $lang
+ * @property string $date
+ * @property int $ip
+ * @property string $name
+ * @property string $email
+ * @property string $message
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereIp($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereLang($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Modules\Feedback\Models\Feedback whereUpdatedAt($value)
  */
 class Feedback extends Model
 {
