@@ -2,12 +2,12 @@
 return [
 
     //file field
-    'image' => [
+    'images' => [
         'path'      => '/uploads/products/',
         'validator' => 'mimes:jpeg,jpg,png|max:10000',
 
         //Model field
-        'field' => 'image',
+        'field' => 'images',
 
         'thumbs' => [
             [
