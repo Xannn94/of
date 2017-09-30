@@ -1,0 +1,376 @@
+@media screen and (max-width:1226px){
+	.wrapper{
+		width: 768px;
+		overflow: hidden;
+	}
+
+	.logo{
+		margin-right: 20px;
+	}
+
+	.header__phone{
+		margin: 13px 35px 0 0;
+	}
+
+	.search{
+		width: 145px;
+		margin: 15px 18px 0 0;
+	}
+
+	.header__phone span{
+		font-size: 15px;
+	}
+
+	.logo {
+		width: 97px;
+		height: 81px;
+	}
+
+	.enter{
+		margin: 13px 13px 0 0;
+	}
+
+	.basket{
+		padding-left: 0;
+		padding-top: 3px;
+	}
+
+	.basket::before{
+		display: none;
+	}
+
+	.basket{
+		width: 161px;
+	}
+
+	.menu__item {
+		padding: 0 11px;
+		position: relative;
+	}
+
+
+	.slide{
+		height: 466px;
+	}
+
+	.slide__info{
+		font-size: 38px;
+		line-height: 42px;
+	}
+
+	.info{
+		text-align: center;
+	}
+
+	.info__item{
+		width: 30%;
+		height: 166px;
+	}
+
+	.slider{
+		margin-bottom: 27px;
+	}
+
+	.info__title{
+		font-size: 22px;
+		top: 31px;
+		font-weight: normal;
+	}
+
+	.new-model__slider{
+		width: 100%;
+	}
+
+	.info {
+		margin-bottom: 36px;
+	}
+
+	.news{
+		width: 100%;
+	}
+
+	.models__link{
+		margin-right: 11px;
+	}
+
+	.new-model{
+		margin-bottom: 40px;
+	}
+
+	.menu.fixed{
+		position: static;
+	}
+
+	.models__item{
+		width: 237px;
+		margin-right: 20px;
+	}
+
+	.models__item:nth-child(4n+1){
+		margin-right: 20px;
+	}
+
+	.models__item:nth-child(3n+1){
+		margin-right: 0;
+	}
+
+	.models__pic{
+		height: 340px;
+	}
+
+	.footer__menu__item{
+		padding: 0 12px;
+	}
+
+	.side-menu{
+		width: 248px;
+	}
+
+	.page-content{
+		width: 508px;
+	}
+
+	.sort__left{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.sort__right{
+		width: 100%;
+	}
+
+	.catalog .models__item{
+		width: 227px;
+		margin-right: 0;
+	}
+
+	.models_same .models__item{
+		width: 227px;
+		margin-right: 0;
+	}
+
+	.b-gallery-widget__item{
+		height: 129px;
+		width: 66px;
+		height: 410px;
+	}
+
+	.news-full__pic{
+		width: 218px;
+	}
+
+	.b-gallery-widget__item{
+		height: 129px;
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@media screen and (max-width:768px){
+	.wrapper{
+		width: 360px;
+		padding: 0 5px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.header__phone{
+		display: none;
+	}
+
+	.search{
+		display: none;
+	}
+
+	.enter{
+		display: none;
+	}
+
+	.mobile-hamburger {
+		display: block;
+	}
+
+	.sidebar-block__top {
+		display: block;
+	}
+
+	.menu{
+		display: none;
+	}
+
+	.logo {
+		margin-right: 13px;
+	}
+
+	.sidebar .logo {
+		margin-top: -30px;
+		margin-bottom: 13px;
+	}
+
+	.sidebar .header__phone{
+		display: block;
+		margin-left: 15px;
+		margin-bottom: 20px;
+	}
+
+	.sidebar .enter{
+		display: block;
+		margin-left: 15px;
+		margin-bottom: 20px;
+	}
+
+	.sidebar .search{
+		display: block;
+		margin-left: 15px;
+		margin-bottom: 10px;
+		width: 80%;
+	}
+
+	.slide {
+		height: 300px;
+	}
+
+	.slide__info {
+		font-size: 32px;
+		line-height: 34px;
+		width: 95%;
+		height: 165px;
+		left: 7px;
+		font-weight: bold;
+		text-shadow: 0px 1px 9px rgba(244, 244, 244, 1);
+	}
+
+	.info__item {
+		width: 100%;
+		height: 247px;
+		margin-bottom: 26px;]
+	}
+
+	.info__title{
+		top: 82px;
+	}
+
+	.models__link {
+		margin-right: 0;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.models__item {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.models__pic {
+		height: 488px;
+	}
+
+	.footer{
+		padding-top: 26px;
+	}
+
+	.footer__menu__item {
+		padding: 3px 12px;
+	}
+
+	.side-menu{
+		display: none;
+	}
+
+	.page-content{
+		width: 100%;
+	}
+
+	.menu__wrap{
+		display: none;
+	}
+
+	.models__links{
+		margin-bottom: 4px;
+	}
+
+	.footer__menu{
+		margin: 0 0 9px 0;
+	}
+
+	.sort__text{
+		display: none;
+	}
+
+	.theme{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.size{
+		width: 100%;
+	}
+
+	.price{
+		width: 100%;
+	}
+
+	.catalog .models__item{
+		width: 100%;
+		margin: 0 0  20px 0;
+	}
+
+	.models_same .models__item{
+		width: 100%;
+		margin: 0 0  20px 0;
+	}
+
+	.side-menu_slider{
+		display: block;
+		width: 100%;
+	}
+
+	.b-gallery-widget__item {
+		height: 129px;
+		width: 85px;
+}
+
+.b-gallery-widget__photo{
+	height: 500px;
+}
+
+.news-full__pic{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
