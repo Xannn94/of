@@ -9,14 +9,14 @@ use App\Modules\Admin\Http\Controllers\Priority;
 class IndexController extends Admin
 {
     use Image, Priority;
+
     public function getModel()
     {
         return new Sliders();
     }
+
     public function getRules($request, $id = false)
     {
-        return  [
-            'title' => 'required|max:255',
-        ];
+        return  [];
     }
 }

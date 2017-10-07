@@ -6,6 +6,7 @@ class ColorComposer
     public function compose(View $view){
         $colors = [
             'white' => trans('sliders::admin.colors.white'),
+            'gray'  => trans('sliders::admin.colors.gray'),
             'black' => trans('sliders::admin.colors.black'),
             'purple' => trans('sliders::admin.colors.purple'),
             'yellow' => trans('sliders::admin.colors.yellow'),

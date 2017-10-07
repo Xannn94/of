@@ -54,4 +54,9 @@ class TreeRepository
         return $keyed;
     }
 
+    public function getByModule($module)
+    {
+        return Model::active()->where('module', $module)->first();
+    }
+
 }

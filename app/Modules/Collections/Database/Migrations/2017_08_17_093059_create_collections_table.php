@@ -16,10 +16,11 @@ class CreateCollectionsTable extends Migration
         Schema::create('collections', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('slug');
+            $table->text('preview');
             $table->string('image');
             $table->integer('priority');
-            $table->tinyInteger('on_main_top');
-            $table->tinyInteger('on_main_bottom');
+            $table->tinyInteger('on_main');
             $table->tinyInteger('active');
             $table->timestamps();
         });

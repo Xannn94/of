@@ -12,21 +12,31 @@
     </div>
 
     <div class="col-md-6">
-        {!! BootForm::hidden('active', 0) !!}
-        {!! BootForm::checkbox('active', trans('admin::fields.active'), 1) !!}
+        {!! BootForm::text('slug', 'Адрес коллекции') !!}
+    </div>
+
+
+
+
+
+
+    <div class="col-md-6">
+        {!! BootForm::textarea('preview', trans('admin::fields.preview'), null, ['rows'=>'5']) !!}
+    </div>
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                {!! BootForm::hidden('active', 0) !!}
+                {!! BootForm::checkbox('active', trans('admin::fields.active'), 1) !!}
+            </div>
+            <div class="col-md-6">
+                {!! BootForm::hidden('on_main', 0) !!}
+                {!! BootForm::checkbox('on_main', trans('collections::admin.on_main'), 1) !!}
+            </div>
+        </div>
     </div>
     <div class="clearfix"></div>
-
-    <div class="col-md-6">
-        {!! BootForm::hidden('on_main_top', 0) !!}
-        {!! BootForm::checkbox('on_main_top', trans('collections::admin.on_main_top'), 1) !!}
-    </div>
-
-    <div class="col-md-6">
-        {!! BootForm::hidden('on_main_bottom', 0) !!}
-        {!! BootForm::checkbox('on_main_bottom', trans('collections::admin.on_main_bottom'), 1) !!}
-    </div>
-
     <div class="col-md-6">
         @include('admin::common.forms.image', ['entity'=>$entity, 'routePrefix'=>$routePrefix, 'field'=>'image'])
     </div>

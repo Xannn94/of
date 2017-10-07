@@ -17,9 +17,6 @@ class CreateSlidersTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('title_color');
-            $table->string('background_button');
-            $table->string('color_button');
-            $table->text('preview');
             $table->string('link');
             $table->enum('link_type',['in','out']);
             $table->string('image');

@@ -1,25 +1,19 @@
-@if (count($items))
-<div class="col-sm-4">
-    <div class="sidebar">
-        <div class="news-widget">
-            <div class="news-widget__title-main">
-                @lang('news::index.title')
-            </div>
-
+@if (!$items->isEmpty() && ($newsPage = Tree::getByModule('news')))
+    <div class="news">
+        <h3 class="news__title"><a href="{{ route($newsPage->slug) }}">@lang('news::index.title')</a></h3>
+        <div class="news__items">
             @foreach($items as $item)
-                <div class="news-widget__item">
-                    <h2 class="news-widget__title">
-                        <a href="{!! route('news.show', $item->id) !!}">{{$item->title}}</a>
-                    </h2>
-                    <div class="news-widget__content">
-                        <p>{{ nl2br(e($item->preview)) }}</p>
-                    </div>
-                    <a class="news-widget__link" href="{!! route('news.show', $item->id) !!}">
-                        @lang('news::index.read_more')
-                    </a>
+                <div class="news__item">
+                    <span class="news__date">{{ $item->date }}</span>
+                    <p class="news__descr">
+                        <a href="{{ route($newsPage->slug.'.show',$item->id) }}">
+                            <span class="link-dashed">
+                                {{ $item->preview }}
+                            </span>
+                        </a>
+                    </p>
                 </div>
-           @endforeach
+            @endforeach
         </div>
     </div>
-</div>
 @endif

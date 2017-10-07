@@ -3,6 +3,7 @@
 @section('th')
     {{--Пример колонки с функцией сортировки ASC-DESC--}}
     <th>@sortablelink('title', trans('admin::fields.title'))</th>
+    <th>@sortablelink('slug', 'Адрес')</th>
     <th>@sortablelink('priority', trans('admin::fields.priority'))</th>
     <th>@lang('admin::admin.control')</th>
 @endsection
@@ -15,6 +16,7 @@
         {{--<tr>--}}
             {{--Пример как заполнять таблицу--}}
             <td>{{ $entity->title }}</td>
+            <td>{{ $entity->slug }}</td>
             <td width="130">
                 @include ('admin::common.controls.priority', ['routePrefix'=>$routePrefix, 'entity'=>$entity])
             </td>

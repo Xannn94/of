@@ -7,6 +7,6 @@ class MainComposer
 {
     public function compose(View $view)
     {
-        $view->with('items', News::active()->where('on_main', 1)->get());
+        $view->with('items', News::active()->where('on_main', 1)->limit(3)->get());
     }
 }

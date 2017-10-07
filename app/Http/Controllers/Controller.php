@@ -31,9 +31,20 @@ abstract class Controller extends BaseController
 
     protected function fetchEntity()
     {
-        $id = Request::getFacadeRoot()->id;
+        $id   = Request::getFacadeRoot()->id;
+        $slug = Request::getFacadeRoot()->slug;
+
         if (action() == 'show' && $id){
             $entity = $this->getModel()->findOrFail($id);
+            Request::getFacadeRoot()->attributes->add(['entity' => $entity]);
+            View::share('entity', $entity);
+        } elseif (action() == 'show' && $slug) {
+            $entity = $this->getModel()->where('slug',$slug)->first();
+
+            if (!$entity) {
+                abort(404);
+            }
+
             Request::getFacadeRoot()->attributes->add(['entity' => $entity]);
             View::share('entity', $entity);
         }

@@ -63,4 +63,18 @@ class Tree extends ParentTree{
     use Sortable;
 
     protected $table = 'tree';
+
+    public function getChildren($position)
+    {
+        switch ($position){
+            case 'in_menu':
+                return $this->children()->active()->where('in_menu',1)->get();
+                break;
+            case 'in_top_menu':
+                break;
+            default:
+                return collect();
+                break;
+        }
+    }
 }

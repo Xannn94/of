@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.31 on 2017-07-26.
+ * Generated for Laravel 5.3.31 on 2017-10-07.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2895,6 +2895,60 @@ namespace Illuminate\Support\Facades {
         public static function getQueuedCookies()
         {
             return \Illuminate\Cookie\CookieJar::getQueuedCookies();
+        }
+         
+    }
+
+    class Crypt {
+        
+        /**
+         * Determine if the given key and cipher combination is valid.
+         *
+         * @param string $key
+         * @param string $cipher
+         * @return bool 
+         * @static 
+         */ 
+        public static function supported($key, $cipher)
+        {
+            return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
+        }
+        
+        /**
+         * Encrypt the given value.
+         *
+         * @param mixed $value
+         * @return string 
+         * @throws \Illuminate\Contracts\Encryption\EncryptException
+         * @static 
+         */ 
+        public static function encrypt($value)
+        {
+            return \Illuminate\Encryption\Encrypter::encrypt($value);
+        }
+        
+        /**
+         * Decrypt the given value.
+         *
+         * @param mixed $payload
+         * @return string 
+         * @throws \Illuminate\Contracts\Encryption\DecryptException
+         * @static 
+         */ 
+        public static function decrypt($payload)
+        {
+            return \Illuminate\Encryption\Encrypter::decrypt($payload);
+        }
+        
+        /**
+         * Get the encryption key.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getKey()
+        {
+            return \Illuminate\Encryption\Encrypter::getKey();
         }
          
     }
@@ -13843,6 +13897,8 @@ namespace  {
     class Config extends \Illuminate\Support\Facades\Config {}
 
     class Cookie extends \Illuminate\Support\Facades\Cookie {}
+
+    class Crypt extends \Illuminate\Support\Facades\Crypt {}
 
     class DB extends \Illuminate\Support\Facades\DB {}
 

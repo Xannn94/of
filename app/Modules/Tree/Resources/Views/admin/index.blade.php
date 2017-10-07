@@ -20,6 +20,7 @@
                 <tr>
                     <th>@lang('tree::admin.title_short')</th>
                     <th>@lang('tree::admin.slug_short')</th>
+                    <th>Модуль</th>
                     <th>@lang('admin::fields.priority')</th>
                     <th>@lang('admin::admin.control')</th>
                 </tr>
@@ -35,6 +36,7 @@
                     </td>
 
                     <td>{{ $entity->slug }}</td>
+                    <td>{{ $entity->module?trans($entity->module."::admin.title"):null }}</td>
 
                     <td class="priority">
                         @if (!$entity->isRoot())

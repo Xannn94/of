@@ -1,5 +1,5 @@
 @extends('layouts.inner')
 
 @section('content')
-    <p>{!! $entity->content !!}</p>
+    <p>{!! $entity !!}</p>
 @endsection

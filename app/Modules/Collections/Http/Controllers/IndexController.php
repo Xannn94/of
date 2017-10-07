@@ -7,12 +7,8 @@ use App\Modules\Collections\Models\Collections;
 
 class IndexController extends Controller
 {
-
-
     public function getModel()
     {
         return new Collections;
     }
-
-
 }

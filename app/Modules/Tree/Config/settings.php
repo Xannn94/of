@@ -7,9 +7,8 @@ return [
     "modules"       =>[
         ""          => "",
         "news"      => trans('news::admin.title'),
-        "articles"  => trans('articles::admin.title'),
-        "gallery"   => trans('gallery::admin.title'),
-        "feedback"  => trans('feedback::admin.title')],
+        "feedback"  => trans('feedback::admin.title'),
+        "collections"  => trans('collections::admin.title'),],
 
     "templates" => [
         "inner" => trans('tree::admin.templates.inner'),
