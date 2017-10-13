@@ -3,21 +3,13 @@
 @section('content')
     <div class="news-full">
         @if ($entity->image_thumb)
-            <div class="news-full__photo">
-                <a href="{{$entity->image_full}}">
-                    <img class="fit-cover" src="{{$entity->image_full}}" alt="{{$entity->title}}">
-                </a>
+            <div class="news-full__pic">
+                <img src="{{$entity->image_full}}" alt="{{$entity->title}}">
             </div>
         @endif
-
-        <div class="news-full__date">
-            {{Date::_('d.m.Y H:i:s')}}
-        </div>
-
-        <div class="news-full__content">
-            {!! $entity->content !!}
-        </div>
-
-        <a class="get-back" href="{{route($page->slug)}}">@lang('news::index.back')</a>
+        {!! $entity->content !!}
+        <a href="{{ route(Tree::getByModule('news')->slug) }}" class="back-link"> &#8592; Вернуться к списку новостей</a>
+        <div class="clear"></div>
     </div>
 @endsection
+

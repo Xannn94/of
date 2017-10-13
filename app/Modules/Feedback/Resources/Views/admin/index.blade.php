@@ -12,19 +12,14 @@
             <div class="box-header"></div>
             <div class="box-body">
 
-                <div class="col-md-3">
-                    {!! BootForm::text('settings[lat]', trans('feedback::index.lat'),  Settings::get('lat')) !!}
+                <div class="col-md-4">
+                    {!! BootForm::text('settings[feedback_email]', 'email',  Settings::get('feedback_email')) !!}
+                    <p class="help-block">
+                        Несколько email-ов вводить через запятую
+                    </p>
                 </div>
 
-                <div class="col-md-3">
-                    {!! BootForm::text('settings[lng]', trans('feedback::index.lng'),  Settings::get('lng')) !!}
-                </div>
-
-                <div class="col-md-3" >
-                    {!! BootForm::text('settings[zoom]', trans('feedback::index.zoom'),  Settings::get('zoom')) !!}
-                </div>
-
-                <div class="col-md-1 filters-button">
+                <div class="col-md-1" style="margin-top: 4px;">
                     {!! BootForm::submit(trans('admin::admin.save')) !!}
                 </div>
 

@@ -4,8 +4,10 @@ namespace App\Modules\Feedback\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Feedback\Models\Feedback;
+use App\Modules\Settings\Facades\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Mail;
 
 class IndexController extends Controller
 {
@@ -22,10 +24,22 @@ class IndexController extends Controller
         $arr['ip']      = ip2long($request->ip());
         $arr['date']    = date('Y-m-d H:i:s');
 
+        Mail::send(
+            'feedback::email',
+            [ 'data' => $arr ],
+            function ($message) {
+                $emails = explode(',', Settings::get('feedback_email'));
+                $message
+                    ->to($emails)
+                    ->from('xannn94@mail.ru', 'of')
+                    ->subject('У вас новое сообщение');
+            }
+        );
+
         $this->getModel()->create($arr);
 
         return redirect()->back()->with(
-            'message', 'Ваше сообщение успешно отправлено. Наши менеджеры свяжуться с вами в ближайшее время.'
+            'message', 'Ваше сообщение успешно отправлено.'
         );
     }
 
@@ -34,6 +48,8 @@ class IndexController extends Controller
         return [
             'name'      => 'required|max:255',
             'email'     => 'required|email',
+            'phone'     => 'required',
+            'message'   => 'required',
             'captcha'   => 'required|captcha'
         ];
     }

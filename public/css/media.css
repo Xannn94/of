@@ -163,6 +163,17 @@
 		height: 129px;
 	}
 
+	.contacts__info{
+		width: 100%;
+		float: none;
+		margin-bottom: 30px;
+	}
+
+	.contacts__form{
+		width: 100%;
+		float: none;
+	}
+
 
 
 

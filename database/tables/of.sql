@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 07 2017 г., 12:43
+-- Время создания: Окт 13 2017 г., 19:29
 -- Версия сервера: 5.7.19
 -- Версия PHP: 7.1.7
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `lr_admins`
 --
 
+DROP TABLE IF EXISTS `lr_admins`;
 CREATE TABLE `lr_admins` (
   `id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL,
@@ -52,6 +53,7 @@ INSERT INTO `lr_admins` (`id`, `role_id`, `name`, `email`, `password`, `remember
 -- Структура таблицы `lr_articles`
 --
 
+DROP TABLE IF EXISTS `lr_articles`;
 CREATE TABLE `lr_articles` (
   `id` int(10) UNSIGNED NOT NULL,
   `lang` enum('ru','en','ky') COLLATE utf8_unicode_ci NOT NULL,
@@ -76,6 +78,7 @@ CREATE TABLE `lr_articles` (
 -- Структура таблицы `lr_collections`
 --
 
+DROP TABLE IF EXISTS `lr_collections`;
 CREATE TABLE `lr_collections` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -102,20 +105,52 @@ INSERT INTO `lr_collections` (`id`, `title`, `slug`, `preview`, `image`, `priori
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `lr_colors`
+--
+
+DROP TABLE IF EXISTS `lr_colors`;
+CREATE TABLE `lr_colors` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `lr_colors`
+--
+
+INSERT INTO `lr_colors` (`id`, `title`) VALUES
+(1, 'Белый'),
+(2, 'Чёрный'),
+(3, 'Синий'),
+(4, 'Красный + Жёлтый');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `lr_feedback`
 --
 
+DROP TABLE IF EXISTS `lr_feedback`;
 CREATE TABLE `lr_feedback` (
   `id` int(10) UNSIGNED NOT NULL,
   `lang` enum('ru','en','ky') COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `ip` bigint(20) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `lr_feedback`
+--
+
+INSERT INTO `lr_feedback` (`id`, `lang`, `date`, `ip`, `name`, `phone`, `email`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'ru', '2017-10-11', 2130706433, 'имя', '', 'axiles94@gmail.com', 'первая\r\nвторая', '2017-10-11 10:26:58', '2017-10-11 10:26:58'),
+(2, 'ru', '2017-10-11', 2130706433, 'имя 2', '', 'axiles94@gmail.com', 'первая\r\nвторая', '2017-10-11 10:30:36', '2017-10-11 10:30:36');
 
 -- --------------------------------------------------------
 
@@ -123,6 +158,7 @@ CREATE TABLE `lr_feedback` (
 -- Структура таблицы `lr_gallery`
 --
 
+DROP TABLE IF EXISTS `lr_gallery`;
 CREATE TABLE `lr_gallery` (
   `id` int(10) UNSIGNED NOT NULL,
   `priority` int(11) NOT NULL,
@@ -148,6 +184,7 @@ CREATE TABLE `lr_gallery` (
 -- Структура таблицы `lr_gallery_images`
 --
 
+DROP TABLE IF EXISTS `lr_gallery_images`;
 CREATE TABLE `lr_gallery_images` (
   `id` int(10) UNSIGNED NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -163,6 +200,7 @@ CREATE TABLE `lr_gallery_images` (
 -- Структура таблицы `lr_migrations`
 --
 
+DROP TABLE IF EXISTS `lr_migrations`;
 CREATE TABLE `lr_migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -191,7 +229,8 @@ INSERT INTO `lr_migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2017_06_01_000013_create_modules_table', 1),
 (16, '2017_06_01_000014_create_permission_role_table', 1),
 (17, '2017_07_26_163239_create_sliders_table', 2),
-(18, '2017_08_17_093059_create_collections_table', 3);
+(18, '2017_08_17_093059_create_collections_table', 3),
+(19, '2017_08_17_102747_create_colors_table', 4);
 
 -- --------------------------------------------------------
 
@@ -199,6 +238,7 @@ INSERT INTO `lr_migrations` (`id`, `migration`, `batch`) VALUES
 -- Структура таблицы `lr_modules`
 --
 
+DROP TABLE IF EXISTS `lr_modules`;
 CREATE TABLE `lr_modules` (
   `id` int(10) UNSIGNED NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -230,6 +270,7 @@ INSERT INTO `lr_modules` (`id`, `slug`, `title`) VALUES
 -- Структура таблицы `lr_news`
 --
 
+DROP TABLE IF EXISTS `lr_news`;
 CREATE TABLE `lr_news` (
   `id` int(10) UNSIGNED NOT NULL,
   `lang` enum('ru','en','ky') COLLATE utf8_unicode_ci NOT NULL,
@@ -264,6 +305,7 @@ INSERT INTO `lr_news` (`id`, `lang`, `priority`, `title`, `date`, `preview`, `co
 -- Структура таблицы `lr_password_resets`
 --
 
+DROP TABLE IF EXISTS `lr_password_resets`;
 CREATE TABLE `lr_password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -276,6 +318,7 @@ CREATE TABLE `lr_password_resets` (
 -- Структура таблицы `lr_permissions`
 --
 
+DROP TABLE IF EXISTS `lr_permissions`;
 CREATE TABLE `lr_permissions` (
   `id` int(10) UNSIGNED NOT NULL,
   `module_id` int(10) UNSIGNED NOT NULL,
@@ -311,6 +354,7 @@ INSERT INTO `lr_permissions` (`id`, `module_id`, `create`, `read`, `update`, `de
 -- Структура таблицы `lr_permission_roles`
 --
 
+DROP TABLE IF EXISTS `lr_permission_roles`;
 CREATE TABLE `lr_permission_roles` (
   `id` int(10) UNSIGNED NOT NULL,
   `roles_id` int(10) UNSIGNED NOT NULL,
@@ -342,6 +386,7 @@ INSERT INTO `lr_permission_roles` (`id`, `roles_id`, `permission_id`) VALUES
 -- Структура таблицы `lr_roles`
 --
 
+DROP TABLE IF EXISTS `lr_roles`;
 CREATE TABLE `lr_roles` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -361,6 +406,7 @@ INSERT INTO `lr_roles` (`id`, `title`, `active`) VALUES
 -- Структура таблицы `lr_settings`
 --
 
+DROP TABLE IF EXISTS `lr_settings`;
 CREATE TABLE `lr_settings` (
   `id` int(10) UNSIGNED NOT NULL,
   `key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -369,12 +415,20 @@ CREATE TABLE `lr_settings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Дамп данных таблицы `lr_settings`
+--
+
+INSERT INTO `lr_settings` (`id`, `key`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'feedback_email', 'axiles94@gmail.com', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `lr_sliders`
 --
 
+DROP TABLE IF EXISTS `lr_sliders`;
 CREATE TABLE `lr_sliders` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -402,6 +456,7 @@ INSERT INTO `lr_sliders` (`id`, `title`, `title_color`, `link`, `link_type`, `im
 -- Структура таблицы `lr_statistics_search_words`
 --
 
+DROP TABLE IF EXISTS `lr_statistics_search_words`;
 CREATE TABLE `lr_statistics_search_words` (
   `id` int(10) UNSIGNED NOT NULL,
   `date` datetime NOT NULL,
@@ -417,6 +472,7 @@ CREATE TABLE `lr_statistics_search_words` (
 -- Структура таблицы `lr_tree`
 --
 
+DROP TABLE IF EXISTS `lr_tree`;
 CREATE TABLE `lr_tree` (
   `id` int(10) UNSIGNED NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
@@ -449,7 +505,7 @@ INSERT INTO `lr_tree` (`id`, `parent_id`, `lft`, `rgt`, `depth`, `lang`, `slug`,
 (3, 1, 4, 5, 1, 'ru', 'catalog', 'Каталог одежды', '', 'collections', 'inner', 1, 1, '', '', '', '', '2017-10-06 23:33:42', '2017-10-07 01:35:58'),
 (4, 1, 6, 7, 1, 'ru', 'Cooperation', 'Сотрудничество', '', '', 'inner', 1, 1, '', '', '', '', '2017-10-06 23:34:51', '2017-10-06 23:34:51'),
 (5, 1, 8, 9, 1, 'ru', 'news', 'Новости и публикации', '', 'news', 'inner', 1, 1, '', '', '', '', '2017-10-06 23:35:36', '2017-10-07 03:26:24'),
-(6, 1, 10, 11, 1, 'ru', 'contacts', 'Контакты', '', '', 'inner', 1, 1, '', '', '', '', '2017-10-06 23:36:37', '2017-10-06 23:36:37');
+(6, 1, 10, 11, 1, 'ru', 'contacts', 'Контакты', '<h5>Контактные данные:</h5>\r\n  <ul class=\"contacts__list\">\r\n    <li class=\"contacts__item contacts__item_name\">Общественный фонд \"Нахла Хайрия\"</li>\r\n    <li class=\"contacts__item\"><b>Адрес:</b> 720000, Кыргызстан, г.Бишкек, Первомайский район, пр.Чуй 130, 456</li>\r\n    <li class=\"contacts__item\"><b>Почта:</b> <a href=\"mailto:info@gmail.com\" >info@gmail.com</a></li>\r\n    <li class=\"contacts__item\"><b>Приемная:</b> +996 551 756 436 (есть WhatsApp)</li>\r\n    <li class=\"contacts__item\"><b>Скайп:</b> <a href=\"skype:weltkind_\" >skypename</a></li>\r\n  </ul>', 'feedback', 'inner', 1, 1, '', '', '', '', '2017-10-06 23:36:37', '2017-10-10 10:41:18');
 
 -- --------------------------------------------------------
 
@@ -457,6 +513,7 @@ INSERT INTO `lr_tree` (`id`, `parent_id`, `lft`, `rgt`, `depth`, `lang`, `slug`,
 -- Структура таблицы `lr_users`
 --
 
+DROP TABLE IF EXISTS `lr_users`;
 CREATE TABLE `lr_users` (
   `id` int(10) UNSIGNED NOT NULL,
   `region_id` int(11) NOT NULL,
@@ -479,6 +536,7 @@ CREATE TABLE `lr_users` (
 -- Структура таблицы `lr_widgets`
 --
 
+DROP TABLE IF EXISTS `lr_widgets`;
 CREATE TABLE `lr_widgets` (
   `id` int(10) UNSIGNED NOT NULL,
   `lang` enum('ru','en','ky') COLLATE utf8_unicode_ci NOT NULL,
@@ -523,6 +581,12 @@ ALTER TABLE `lr_articles`
 -- Индексы таблицы `lr_collections`
 --
 ALTER TABLE `lr_collections`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `lr_colors`
+--
+ALTER TABLE `lr_colors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -659,10 +723,15 @@ ALTER TABLE `lr_articles`
 ALTER TABLE `lr_collections`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT для таблицы `lr_colors`
+--
+ALTER TABLE `lr_colors`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT для таблицы `lr_feedback`
 --
 ALTER TABLE `lr_feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `lr_gallery`
 --
@@ -677,7 +746,7 @@ ALTER TABLE `lr_gallery_images`
 -- AUTO_INCREMENT для таблицы `lr_migrations`
 --
 ALTER TABLE `lr_migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT для таблицы `lr_modules`
 --
@@ -707,7 +776,7 @@ ALTER TABLE `lr_roles`
 -- AUTO_INCREMENT для таблицы `lr_settings`
 --
 ALTER TABLE `lr_settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `lr_sliders`
 --

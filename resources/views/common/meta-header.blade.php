@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{{ asset('/css/colorbox.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/jquery.fancybox.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/jquery.formstyler.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
 
     @stack('css')
 </head>

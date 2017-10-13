@@ -1,0 +1,12 @@
+#captcha_image {
+    cursor: pointer;
+}
+
+.error-item {
+    font-size: 12px;
+    color: #FF0000;
+}
+
+.form__title.form__title_success {
+    font-size: 18px;
+}
